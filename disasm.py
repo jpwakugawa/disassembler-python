@@ -40,7 +40,7 @@ def main(argv):
             elif(opcode in "7"):
                 print("halt")
             elif(opcode in "8"):
-                print(f"skipcond")
+                print(f"skipcond {endereco}")
             elif(opcode in "9"):
                 print(f"jump {endereco}")
             elif(opcode in "a"):
@@ -52,7 +52,7 @@ def main(argv):
             elif(opcode in "d"):
                 print(f"loadi {endereco}")
             elif(opcode in "e"):
-                print("storei")
+                print(f"storei {endereco}")
 
             byte = binfile.read(2)
     
