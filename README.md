@@ -32,5 +32,5 @@ Test not passed.
 Running test (18/18): .//test11_bubble.bin
 Test not passed.
 
-## Third Test
-Adding Halt
+## Third Test (90%)
+Adding rstrip to take zeros.
