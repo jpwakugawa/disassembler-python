@@ -21,7 +21,8 @@ def main(argv):
         while byte:
             instruction = byte.hex()
             opcode = instruction[0]
-            endereco = instruction[1:].lstrip("0")
+            stripped = instruction[1:3].lstrip("0")
+            endereco = stripped + instruction[-1]
 
             if(opcode in "0"):
                 answer = f"jns {endereco}"
@@ -54,7 +55,6 @@ def main(argv):
             elif(opcode in "e"):
                 answer = f"storei {endereco}"
             
-            answer = answer.rstrip()
             print(answer)
 
             byte = binfile.read(2)
