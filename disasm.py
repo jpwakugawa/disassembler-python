@@ -12,17 +12,13 @@ def main(argv):
     
     # Opção 'rb' abre o arquivo para leitura em formato binário
     with open(filename, 'rb') as binfile:
-        #
-        # Seu código começa aqui!
-        # 
-        # Utilize a variável "binfile" para ler os bytes do arquivo
-        #
+
         byte = binfile.read(2)
+
         while byte:
             instruction = byte.hex()
             opcode = instruction[0]
-            stripped = instruction[1:3].lstrip("0")
-            endereco = stripped + instruction[-1]
+            endereco = instruction[1:]
 
             if(opcode in "0"):
                 answer = f"jns {endereco}"
@@ -58,9 +54,6 @@ def main(argv):
             print(answer)
 
             byte = binfile.read(2)
-# -------------------------------------
-# Trecho a seguir obrigatório para receber os parâmetros via linha de comando.
-# NÃO APAGAR!!
 
 if __name__ == "__main__":
     main(sys.argv[1:])
